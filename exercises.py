@@ -137,7 +137,19 @@ calculate_dog_years()
 # - Use logical operators (`AND`, `OR`, `NOT`) in your if statements to handle multiple conditions.
 
 def weather_advice():
-    # Your control flow logic goes here
+    cold = input("Is it cold? (yes/no): ").strip().lower()
+    raining = input("Is it raining? (yes/no): ").strip().lower()
+
+    if cold == "yes" and raining == "yes":
+        print("Wear a waterproof coat.")
+    elif cold == "yes" and raining == "no":
+        print("Wear a warm coat.")
+    elif cold == "no" and raining == "yes":
+        print("Carry an umbrella.")
+    elif cold == "no" and raining == "no":
+        print("Wear light clothing.")
+    else:
+        print("Invalid input. Please answer 'yes' or 'no'.")
 
 # Call the function
 weather_advice()
