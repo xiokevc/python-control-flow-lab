@@ -12,7 +12,7 @@
 
 def print_greeting():
     # Your code goes here. Remember to indent!
-    python_is_fun = True
+    python_is_fun = True #boolean
     if python_is_fun:
         print("Python is fun!")
 
@@ -37,9 +37,17 @@ print_greeting()
 # - Ensure to provide feedback for non-alphabetical or invalid entries.
 
 def check_letter():
-    # Your control flow logic goes here
+    letter = input("Enter a single letter (a-z or A-Z): ").strip() #removes extra space
+    if len(letter) != 1 or not letter.isalpha():
+        print("Invalid input. Please enter a single alphabetical letter.")
+        return
 
-# Call the function
+    vowels = 'aeiou' #stores vowels within a string
+    if letter.lower() in vowels:
+        print(f"The letter {letter} is a vowel.")
+    else:
+        print(f"The letter {letter} is a consonant.")
+
 check_letter()
 
 # Exercise 2: Old enough to vote?
