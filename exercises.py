@@ -101,7 +101,21 @@ check_voting_eligibility()
 # - Apply conditional logic to perform the correct age calculation based on the dog's age.
 
 def calculate_dog_years():
-    # Your control flow logic goes here
+    age_input = input("Input a dog's age: ").strip()
+    try:
+        dog_age = int(age_input)
+        if dog_age < 0:
+            print("Age cannot be negative.")
+            return
+        if dog_age == 1:
+            dog_years = 10
+        elif dog_age == 2:
+            dog_years = 20
+        else:
+            dog_years = 20 + (dog_age - 2) * 7
+        print(f"The dog's age in dog years is {dog_years}.")
+    except ValueError:
+        print("Invalid input. Please enter a number.")
 
 # Call the function
 calculate_dog_years()
