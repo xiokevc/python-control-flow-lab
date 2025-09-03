@@ -222,7 +222,31 @@ determine_season()
 # - Use logical AND, OR, and NOT to check conditions and provide appropriate feedback.
 
 def guess_number():
-    # Your control flow logic goes here
+    target = 42
+    max_attempts = 5
+
+    for attempt in range(1, max_attempts + 1):
+        guess_input = input(f"Attempt {attempt} - Guess the number (1-100): ").strip()
+        try:
+            guess = int(guess_input)
+            if guess < 1 or guess > 100:
+                print("Guess out of range. Please enter a number between 1 and 100.")
+                continue
+
+            if guess == target:
+                print("Congratulations, you guessed correctly!")
+                return
+            elif guess < target:
+                print("Your guess is too low.")
+            else:
+                print("Your guess is too high.")
+
+            if attempt == max_attempts:
+                print("Last chance!" if guess != target else "")
+        except ValueError:
+            print("Invalid input. Please enter a number.")
+
+    print("Sorry, you failed to guess the number in five attempts.")
 
 # Call the function
 guess_number()
